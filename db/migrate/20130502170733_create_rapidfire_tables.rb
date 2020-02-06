@@ -43,7 +43,7 @@ class CreateRapidfireTables < base
 
       t.timestamps
     end
-    if Rails::VERSION::MAJOR != 5
+    if Rails::VERSION::MAJOR < 5
       add_index :rapidfire_answers, :attempt_id
       add_index :rapidfire_answers, :question_id
     end
