@@ -1,6 +1,9 @@
 module Rapidfire
   class Question < ActiveRecord::Base
+    attribute :position, :integer, default: -> { (Rapidfire::Question.maximum(:position) || 0) + 1 }
+
     belongs_to :survey, :inverse_of => :questions
+    belongs_to :section, :inverse_of => :questions
     has_many   :answers
 
     default_scope { order(:position) }

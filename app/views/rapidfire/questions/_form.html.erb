@@ -10,6 +10,11 @@
   <% end %>
 
   <div class="form-group">
+    <%= f.label :section_id, "Section" %>
+    <%= f.select :section_id, f.object.survey.sections.map {|s| s.name, s.id }, { include_blank: true } %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :type %>
     <%= f.select :type, ::Rapidfire::QuestionForm::QUESTION_TYPES, {}, id: "question_type" %>
   </div>

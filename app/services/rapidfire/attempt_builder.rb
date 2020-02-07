@@ -7,6 +7,10 @@ module Rapidfire
       build_attempt(params[:attempt_id])
     end
 
+    def sections
+      @sections ||= answers.group_by{|answer| answer.question.section_id }
+    end
+
     def to_model
       @attempt
     end

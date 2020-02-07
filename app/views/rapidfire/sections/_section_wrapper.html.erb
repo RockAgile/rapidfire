@@ -1,0 +1,20 @@
+<%- section = Rapidfire::Section.find_by(section_id) %>
+<tr id="section_<%= section_id %>" class="rapidfire-section">
+  <td>
+    <%- if section.name.present? %>
+      <h2><%= section.name -%></h2>
+      <hr/>
+    <% end %>
+
+    <%- if section.description.present? %>
+      <p><%= section.description -%></p>
+      <hr/>
+    <% end %>
+
+    <%- answers.each do |answer| %>
+      <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+        <%= render_answer_form_helper(answer, answer_form) %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

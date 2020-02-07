@@ -1,0 +1,10 @@
+<tr id="section_<%= section.id %>" class="rapidfire-section">
+  <td><%= section.name %></td>
+  <td><%= section.description %></td>
+  <td>
+    <ul class="horizontal-list">
+      <li><%= link_to "Edit", [:edit, section.survey, section] %></li>
+      <li><%= link_to "Delete", [section.survey, section], method: :delete %></li>
+    </ul>
+  </td>
+</tr>

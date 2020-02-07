@@ -1,4 +1,4 @@
-<tr id= "survey_<%= survey.id %>">
+<tr id= "survey_<%= survey.id %>" class="rapidfire-survey">
   <td>
     <% if can_administer? %>
       <%= link_to survey.name, survey_questions_path(survey) %>

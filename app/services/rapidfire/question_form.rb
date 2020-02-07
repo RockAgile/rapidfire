@@ -20,7 +20,7 @@ module Rapidfire
     attr_accessor :survey, :question, :default_text, :placeholder,
       :type, :question_text, :position, :answer_options, :answer_presence,
       :answer_minimum_length, :answer_maximum_length,
-      :answer_greater_than_or_equal_to, :answer_less_than_or_equal_to
+      :answer_greater_than_or_equal_to, :answer_less_than_or_equal_to, :section
 
     delegate :valid?, :errors, :to => :question
 
@@ -59,6 +59,7 @@ module Rapidfire
         :default_text => default_text,
         :placeholder => placeholder,
         :answer_options => answer_options,
+        :section => section,
         :validation_rules => {
           :presence => answer_presence,
           :minimum  => answer_minimum_length,

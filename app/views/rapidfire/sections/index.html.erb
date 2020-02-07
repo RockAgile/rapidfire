@@ -1,0 +1,26 @@
+<h2>
+  <%= t('rapidfire.sections.header') -%>
+</h2>
+<h3>
+  <%= link_to t('rapidfire.sections.new'), new_survey_section_path(@survey) %>
+</h3>
+<h4>
+  <%= link_to t('rapidfire.sections.back'), surveys_path(@survey) %>
+</h4>
+<hr/>
+
+<table>
+  <colgroup>
+    <col>
+    <col width="250">
+  </colgroup>
+  <thead>
+    <tr>
+      <th><%= t('rapidfire.sections.section') -%></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "section", collection: @sections %>
+  </tbody>
+</table>
