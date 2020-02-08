@@ -4,7 +4,7 @@ module Rapidfire
 
     belongs_to :survey, :inverse_of => :questions
     belongs_to :section, :inverse_of => :questions
-    has_many   :answers
+    has_many   :answers, :dependent => :destroy
 
     default_scope { order(:position) }
 

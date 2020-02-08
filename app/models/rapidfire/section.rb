@@ -5,7 +5,7 @@ module Rapidfire
     attribute :position, :integer, default: -> { (Rapidfire::Section.maximum(:position) || 0) + 1 }
 
     belongs_to :survey, :inverse_of => :sections
-    has_many   :questions
+    has_many   :questions, :dependent => :destroy
 
     default_scope { order(:position) }
 
